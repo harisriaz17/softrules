@@ -14,6 +14,7 @@ Microsoft, founded by Bill Gates in his garage, is a very well-known company
 We can notice though that the rule "almost" matches. The goal here is to give a numeric value to "almost".
 
 ## Architecture
+<img src="/docs/mpnet.png" alt="Architecture of our proposed method"/>
 
 ## Code
 
