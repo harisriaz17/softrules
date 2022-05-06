@@ -22,7 +22,7 @@ We can notice though that the rule "almost" matches. The goal here is to give a 
 
 The structure is:
 - `datagen.py` contains the base class for generating the `train`, `dev` and `test` partitions of the gold data. We can simply generate and save the data as follows:
-```
+```python
    from datagen import DataGen
    dg = DataGen("train_tacred_old.tsv", "\t")
    dg.make_and_save_train_dev_test_splits(15000
