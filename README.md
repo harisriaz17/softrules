@@ -25,7 +25,7 @@ The structure is:
 ```python
    from datagen import DataGen
    dg = DataGen("train_tacred_old.tsv", "\t")
-   dg.make_and_save_train_dev_test_splits(15000
+   dg.make_and_save_train_dev_test_splits(15000)
 ```
 - `src` contains the source code, organized as follows:
     - `src/apps` contains some simple runnables. The idea is to be able to take each individual file and run it without much orchestration. For example, a file might generate some baseline results
