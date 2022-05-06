@@ -1,6 +1,0 @@
-gensim_model:
-  fname    : "softrules/models/glove.6B.50d.txt"
-  binary   : False
-  no_header: True
-index_save_path: "softrules/faiss_index/glove.6B.50d_index"
-vocab_save_path: "softrules/faiss_index/glove.6B.50d_vocab"
