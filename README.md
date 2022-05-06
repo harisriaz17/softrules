@@ -1,5 +1,5 @@
 # Soft Rules
-Compute the matching score between a rule and a sentence using MPNet from `sentence transformers`. In case of hard matching, the rule 
+Compute the matching score between a rule and a sentence using MPNet from [sentence transformers](https://www.sbert.net/docs/pretrained_models.html). In case of hard matching, the rule 
 ```
 [word=was] [word=founded] [word=by]
 ```
