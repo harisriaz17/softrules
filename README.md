@@ -27,12 +27,14 @@ The structure is:
    dg = DataGen("train_tacred_old.tsv", "\t")
    dg.make_and_save_train_dev_test_splits(15000)
 ```
-- `src` contains the source code, organized as follows:
-    - `src/apps` contains some simple runnables. The idea is to be able to take each individual file and run it without much orchestration. For example, a file might generate some baseline results
-        - `src/apps/eval` contains the code for evaluation
-    - `src/dataprocessing` contains the code to process the datasets supported. Each dataset is converted to an internal universal format
-    - `src/model` contains the code for different models, such as baselines (e.g. word averaging) or proposed methods (e.g. transformers)
-    - `src/rulegeneration` contains the code to generate rules from examples. One such approach can be to just use the words in between the entities. Other approaches include calling 3rd party models to generate rules
+The generated data is storred
+- `train_mpnet.py` contains code for training MPNet on the background dataset. We can train as follows:
+    - ```python train_mpnet.py --model_config NO-custom-tokens --loss cosine```
+    The trained model is saved in the `models/` folder. 
+- `preprocess_5_way_1_shot.py` & `preprocess_5_way_5_shot.py`contains the code to preprocess the 1-shot and 5-shot settings from fewshot TACRED.
+      You can run these scripts like this example: preprocess_5_way_1_shot.py --model_name models/NO-custom-tokens-cosine
+- `Run `eval_5_way_1_shot.py` or `eval_5_way_5_shot.py` to evaluate the saved models on fewshot TACRED.
+      You can run these scripts like this example: 
 
 
 ### Installation
