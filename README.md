@@ -21,8 +21,11 @@ We can notice though that the rule "almost" matches. The goal here is to give a 
 ## Code
 
 The structure is:
-- `datagen.py` contains the base class for generating the `train`, `dev` and `test` partitions of the gold data. 
-- `data_sample` contains a folder corresponding to each dataset supported. The idea is to provide a small file with the format of the dataset to facilitate runs.
+- `datagen.py` contains the base class for generating the `train`, `dev` and `test` partitions of the gold data. We can simply generate and save the data as follows:
+```from datagen import DataGen
+   dg = DataGen("train_tacred_old.tsv", "\t")
+   dg.make_and_save_train_dev_test_splits(15000
+```
 - `src` contains the source code, organized as follows:
     - `src/apps` contains some simple runnables. The idea is to be able to take each individual file and run it without much orchestration. For example, a file might generate some baseline results
         - `src/apps/eval` contains the code for evaluation
