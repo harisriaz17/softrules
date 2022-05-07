@@ -51,3 +51,11 @@ The structure is:
 
 Note: If one of the libraries to be installed from github (`odinson-gateway`, `odinson-ruleutils`) fails due to missing the `setuptools` libraries, just install it with `conda install -c anaconda setuptools`.
 
+### Results
+| Fewshot TACRED setting  | Second Header | First Header  | Second Header |
+| ------------- | ------------- | ------------- | ------------- |
+| 5-way 1-shot  | Content Cell  |  |  |       
+| 5-way 5-shot  | Content Cell  |  |  |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
