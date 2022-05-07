@@ -21,23 +21,30 @@ We can notice though that the rule "almost" matches. The goal here is to give a 
 ## Code
 
 The structure is:
-- `datagen.py` contains the base class for generating the `train`, `dev` and `test` partitions of the gold data. We can simply generate and save the data as follows:
+- `datagen.py` contains the base class for generating the `train`, `dev` and `test` partitions of the gold data. We can simply generate and save the data as follows (e.g. to generate positive-negative pairs from N=15000 and save them):
 ```python
    from datagen import DataGen
    dg = DataGen("train_tacred_old.tsv", "\t")
    dg.make_and_save_train_dev_test_splits(15000)
 ```
-The generated data is storred
-- `train_mpnet.py` contains code for training MPNet on the background dataset. We can train as follows:
+- The generated data is stored in the `/data` folder
+
+- `train_mpnet.py` contains code for training MPNet on the background dataset. We can train like the following example:
     - ```python train_mpnet.py --model_config NO-custom-tokens --loss cosine```
     The trained model is saved in the `models/` folder. 
-- `preprocess_5_way_1_shot.py` & `preprocess_5_way_5_shot.py`contains the code to preprocess the 1-shot and 5-shot settings from fewshot TACRED.
-      You can run these scripts like this example: preprocess_5_way_1_shot.py --model_name models/NO-custom-tokens-cosine
-- `Run `eval_5_way_1_shot.py` or `eval_5_way_5_shot.py` to evaluate the saved models on fewshot TACRED.
-      You can run these scripts like this example: 
+    
+- `preprocess_5_way_1_shot.py` & `preprocess_5_way_5_shot.py` contains the code to preprocess the 1-shot and 5-shot settings from fewshot TACRED.
+      You can run these scripts like this example: ```python preprocess_5_way_1_shot.py --model_name models/NO-custom-tokens-cosine```
+      This will precompute & cache the embeddings in the fewshot_tacred/5_way_1_shot folder 
+      
+- Run `eval_5_way_1_shot.py` or `eval_5_way_5_shot.py` to evaluate the saved models on fewshot TACRED.
+      You can run these scripts like this example: ```python eval_5_way_1_shot.py --model_name models/NO-custom-tokens-cosine```
+      
+- To evalate on the background dataset, you can do like this: ```python eval_background.py --model_name models/NO-custom-tokens-cosine```
 
 
 ### Installation
+- `sentence-transformers` from [sbert.net](https://www.sbert.net/docs/installation.html)
 - `odinson-gateway` from [lum-ai](https://github.com/lum-ai/odinson-gateway)
 - `odinson-ruleutils` from [clu-ling](https://github.com/clu-ling/odinson-ruleutils)
 - The rest of the dependencies, as specified in `environment.yml`. Note thet they are standard dependencies, which can be installed from standard channels
