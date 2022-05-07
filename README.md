@@ -52,10 +52,8 @@ The structure is:
 Note: If one of the libraries to be installed from github (`odinson-gateway`, `odinson-ruleutils`) fails due to missing the `setuptools` libraries, just install it with `conda install -c anaconda setuptools`.
 
 ### Results
-| Fewshot TACRED setting  | Second Header | First Header  | Second Header |
-| ------------- | ------------- | ------------- | ------------- |
-| 5-way 1-shot  | Content Cell  |  |  |       
-| 5-way 5-shot  | Content Cell  |  |  |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+Micro F1 scores on fewshot-TACRED:
+| Fewshot TACRED setting  | No-custom-tokens-cosine | Some-custom-tokens-cosine  | No-custom-tokens-contrastive |
+| ----------------------- | ----------------------- | -------------------------- | ---------------------------- |
+| 5-way 1-shot            |        15.30            |            13.65           |             12.72            |          
+| 5-way 5-shot            |        15.20            |            16.60           |             15.51            |
