@@ -30,17 +30,17 @@ The structure is:
 - The generated data is stored in the `/data` folder
 
 - `train_mpnet.py` contains code for training MPNet on the background dataset. We can train like the following example:
-    - ```python train_mpnet.py --model_config NO-custom-tokens --loss cosine```
+    - ```python train_mpnet.py --model_config NO_custom_tokens_15k --loss cosine```
     The trained model is saved in the `models/` folder. 
     
 - `preprocess_5_way_1_shot.py` & `preprocess_5_way_5_shot.py` contains the code to preprocess the 1-shot and 5-shot settings from fewshot TACRED.
-      You can run these scripts like this example: ```python preprocess_5_way_1_shot.py --model_name models/NO-custom-tokens-cosine```
+      You can run these scripts like this example: ```python preprocess_5_way_1_shot.py --model_name models/NO_custom_tokens_cosine_15k```
       This will precompute & cache the embeddings in the fewshot_tacred/5_way_1_shot folder 
       
 - Run `eval_5_way_1_shot.py` or `eval_5_way_5_shot.py` to evaluate the saved models on fewshot TACRED.
-      You can run these scripts like this example: ```python eval_5_way_1_shot.py --model_name models/NO-custom-tokens-cosine```
+      You can run these scripts like this example: ```python eval_5_way_1_shot.py --model_name models/NO_custom_tokens_cosine_15k```
       
-- To evalate on the background dataset, you can do like this: ```python eval_background.py --model_name models/NO-custom-tokens-cosine```
+- To evalate on the background dataset, you can do like this: ```python eval_background.py --model_name models/NO_custom_tokens_cosine_15k```
 
 
 ### Installation
